@@ -22,16 +22,19 @@ export const AggiungiParte = () => {
     <>
 
 
-      <div>
-        <button onClick={toggleAperto}>+</button>
+      <div className="grid grid-cols-2 bg-gradient-to-t from-orange-800 to-orange-600 ">
+        <div className=" pl-3 py-3 text-white font-bold">IL MIO ALLENAMENTO</div>
+        <div className=" font-bold text-white text-right text-3xl pr-3 align-middle ">
+          <button onClick={toggleAperto}>+</button>
+        </div>
       </div>
       {aperto &&
-        <div className="">
-          <div className="bg-pink-600">qui aggiungi un nuovo elemento </div>
-          <div className="border-2 border-dotted rounded-lg border-cyan-800 m-4 p-3">
-            <input className="border-2 border-cyan-300" value={parte.nome} onChange={e => cambiaParte({ nome: e.target.value })} />
-            <button className="drop-shadow-md ml-3 pl-1 pr-1 text-center border-2 border-black" onClick={handleClick}>invia</button>
-            <div className="box-border w-5 h-5 bg-red-500"></div>
+        <div className="border border-black rounded-lg bg-slate-50 m-3">
+          <div className=" text-orange-600 font-semibold text-center text-lg mt-3">Quale parte del corpo vuoi allenare? </div>
+          <div className=" flex justify-center mb-3 p-3">
+            <input className="border-2 border-black shadow-md  " value={parte.nome} onChange={e => cambiaParte({ nome: e.target.value })} />
+            <button className="ml-3 pl-1 pr-1 text-center border-2 border-black shadow-md " onClick={handleClick}>invia</button>
+            
           </div>
         </div>
 
