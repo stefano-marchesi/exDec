@@ -5,7 +5,7 @@ export const Main = ()=>{
     <div>
       <div className="bg-green-300">Main</div>
       <Outlet />
-      <div className="bg-gray-600-300">footer</div>
+      <div className="bg-gray-100">footer</div>
     </div>
   )
 }
