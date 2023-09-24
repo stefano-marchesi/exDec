@@ -13,11 +13,22 @@ export const AggiungiParte = ()=>{
   const handleClick = ()=>{
     dispatch(aggiungiParte(parte))
     cambiaParte(parteDefault)
+    toggleAperto()
   }
+
+  const [aperto, cambiaAperto ] = useState(false)
+  const toggleAperto = ()=>{cambiaAperto(!aperto)}
   return (
-    <div className="bg-zinc-50">
-      <input className="border-2 border-cyan-300" value={parte.nome}    onChange={e => cambiaParte({nome: e.target.value})} />
-      <button className="drop-shadow-md  text-center border-2 border-black" onClick={handleClick}>invia</button>
-    </div>
+
+    <>
+
+      <button onClick={toggleAperto}>+</button>
+      {aperto && <div className="bg-zinc-50">
+        <input className="border-2 border-cyan-300" value={parte.nome}    onChange={e => cambiaParte({nome: e.target.value})} />
+        <button className="drop-shadow-md  text-center border-2 border-black" onClick={handleClick}>invia</button>
+      </div>
+
+}
+          </>
   )
 }
