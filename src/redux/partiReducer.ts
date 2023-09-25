@@ -2,12 +2,15 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from './store'
 
 
-type Parte = {
+export type Parte = {
 	nome: string,
 	stress: number,
 	categoria: string
 }
 
+export type PartiCategorizzate = {
+  [key: string]:Parte[]
+}
 // Define a type for the slice state
 interface PartiState {
   value: Parte[]
@@ -47,5 +50,16 @@ export const { aggiungiParte } = partiSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectParti = (state: RootState) => state.parti.value
+export const selectPartiCategorizzate = (state: RootState) => {
+  return state.parti.value.reduce((acc: PartiCategorizzate, elem: Parte)=>{
+    if(acc[elem.categoria] === undefined){
+      acc[elem.categoria]=[elem]
+    }else{
+      acc[elem.categoria].push(elem)
+    }
+    return acc  
+  }, {})
+  
+}
 
 export default partiSlice.reducer
