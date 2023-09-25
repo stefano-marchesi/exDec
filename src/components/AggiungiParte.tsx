@@ -5,8 +5,9 @@ import "./../index.css"
 
 const parteDefault = {
   nome: '',
-  stress: 0,
-  categoria: 'Braccia'
+  stress:0,
+  categoria: 'Braccia',
+  id:0
 }
 
 export const AggiungiParte = () => {
@@ -15,12 +16,8 @@ export const AggiungiParte = () => {
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     cambiaParte({ ...parte, nome: e.target.value })
   }
-  const handleChangeCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
-    cambiaParte({ ...parte, categoria: e.target.value })
-    console.log(e.target.value);
-
-    console.log(parte);
-
+  const handleChangeCategory = (e: React.ChangeEvent<HTMLInputElement>)=>{
+    cambiaParte({...parte, categoria:e.target.value})
   }
 
   const handleClick = () => {
