@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux"
 import { aggiungiParte } from "../redux/partiReducer"
 import "./../index.css"
 
-const parteDefault = {
+export const parteDefault = {
   nome: '',
   stress:0,
   categoria: 'Braccia',

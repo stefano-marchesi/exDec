@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import partiReducer from './partiReducer'
+import allenamentiReducer from './allenamentiReducer'
 const store = configureStore({
   reducer: {
     parti: partiReducer,
+    allenamenti: allenamentiReducer
   },
 })
 
