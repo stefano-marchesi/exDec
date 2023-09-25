@@ -3,6 +3,7 @@ import { selectParti } from "../redux/partiReducer"
 import { AggiungiParte } from "../components/AggiungiParte"
 import './../index.css'
 import { Link } from "react-router-dom"
+import logo from '../assets/photo-1503023345310-bd7c1de61c7d.jpeg';
 
 
 export const ListaParti = () => {
@@ -23,6 +24,7 @@ export const ListaParti = () => {
         })
         }
       </div>
+      <img src={logo} />
     </div>
   )
 }
