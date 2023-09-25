@@ -3,7 +3,9 @@ import type { RootState } from './store'
 
 
 type Parte = {
-	nome: string
+	nome: string,
+	stress: number,
+	categoria: string
 }
 
 // Define a type for the slice state
@@ -13,7 +15,20 @@ interface PartiState {
 
 // Define the initial state using that type
 const initialState: PartiState = {
-  value: [{nome: 'test'}, {nome: 'secondo test'}],
+  value: [
+    {nome: 'Bicipite', stress: 20, categoria: 'Braccia'}, 
+    {nome: 'Tricipite', stress: 50, categoria: 'Braccia'},
+    
+    {nome: 'Addominale Frontale', stress: 12, categoria: 'Torso'},
+    {nome: 'Addominale laterale', stress: 100, categoria: 'Torso'},
+    {nome: 'Pettorale', stress: 30, categoria: 'Torso'},
+    {nome: 'Trapezio Alto', stress: 10, categoria: 'Torso'},
+    {nome: 'Trapezio Basso', stress: 3, categoria: 'Torso'},
+
+    {nome: 'Gluteo', stress: 120, categoria: 'Gambe'},
+    {nome: 'Adduttori', stress: 3, categoria: 'Gambe'},
+    {nome: 'Quadicipite femorale', stress: 3, categoria: 'Gambe'},
+  ],
 } as PartiState
 
 export const partiSlice = createSlice({
