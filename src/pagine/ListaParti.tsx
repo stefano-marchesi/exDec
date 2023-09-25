@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux"
-import { selectParti } from "../redux/partiReducer"
+import {  selectParti } from "../redux/partiReducer"
 import { AggiungiParte } from "../components/AggiungiParte"
 import './../index.css'
-import { Link } from "react-router-dom"
 import logo from '../assets/photo-1503023345310-bd7c1de61c7d.jpeg';
-
+import { DisplayParte } from "../components/DisplayParte";
 
 export const ListaParti = () => {
   const parti = useSelector(selectParti)
@@ -15,12 +14,7 @@ export const ListaParti = () => {
       <AggiungiParte />
       <div className="grid grid-cols-2">
         {parti.map((parte, index: number) => {
-          return (
-            <div className=" bg-slate-50 border border-orange-600 rounded-lg ml-3 mr-3 m-2 font-semibold text-slate-900 uppercase text-center shadow-md" key={index}>
-
-              <Link to={`singolaparte/${index}`}> {parte.nome}</Link>
-            </div>
-          )
+          return ( <DisplayParte parte={parte} index={index} />)
         })
         }
       </div>
