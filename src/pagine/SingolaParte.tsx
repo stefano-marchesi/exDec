@@ -3,6 +3,7 @@ import { selectParti } from "../redux/partiReducer"
 import { useSelector } from "react-redux"
 import { parteDefault } from "../components/AggiungiParte";
 import { AggiungiAllenamento } from "../components/AggiungiAllenamento";
+import { ListaAllenamenti } from "../components/ListaAllenamenti";
 
 type MyParams = {
   indexParte: string;
@@ -26,6 +27,7 @@ export const SingolaParte = ()=>{
       <div>
         <p>Allenamenti</p>
         <AggiungiAllenamento idParte={Number(indexParte)}/>
+        <ListaAllenamenti idParte={Number(indexParte)}/>
       </div>
     </div>
   )
