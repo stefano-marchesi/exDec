@@ -33,17 +33,17 @@ export const AggiungiParte = () => {
     <>
 
 
-      <div className="grid grid-cols-2 bg-gradient-to-t from-orange-800 to-orange-600 ">
-        <div className=" pl-3 py-3 text-white font-bold">IL MIO ALLENAMENTO</div>
-        <div className=" font-bold text-white text-right text-3xl pr-3 align-middle ">
+      <div className="grid grid-cols-2 bg-gradient-to-t from-orange-400 to-orange-700 ">
+        <div className=" pl-3 py-3 text-gray-900 font-bold">IL MIO ALLENAMENTO</div>
+        <div className=" font-bold text-gray-900 text-right text-3xl pr-3 align-middle ">
           <button onClick={toggleAperto}>+</button>
         </div>
       </div>
       {aperto &&
-        <div className="border border-gray-500 rounded-lg bg-gray-800 m-3">
+        <div className="border border-gray-500 bg-gray-900 m-3">
           <div className=" text-orange-400 font-semibold text-center text-lg mt-3 flex justify-center">Quale parte del corpo vuoi allenare? </div>
           <div className="mb-3 p-3 flex flex-col align-middle">
-            <input className="border-2 border-black bg-slate-400 flex justify-center" value={parte.nome} onChange={handleNameChange} />
+            <input className="border-2 w-2/3 border-black bg-slate-600 text-gray-300 flex justify-center" value={parte.nome} onChange={handleNameChange} />
             <div className="flex-col grid mt-3 justify-items-center m-2 text-orange-400" onChange={handleChangeCategory}>
               <div className=""><input type="radio" value="Braccia" name="gender" /> Braccia </div>
               <div className=""><input type="radio" value="Torso" name="gender" /> Torso </div>

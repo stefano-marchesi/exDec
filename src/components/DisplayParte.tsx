@@ -9,10 +9,11 @@ type DisplayParteProps = {
 export const DisplayParte = (props: DisplayParteProps)=>{
   
           return (
-            <div className="ml-3 mr-3 m-2 mb-3 font-semibold text-orange-400 uppercase text-left shadow-md" >
+            
+            <div className="ml-3 mr-3 m-2 mb-3 font-semibold text-orange-400 uppercase text-left" >
               <Link to={`singolaparte/${props.parte.id}`}>
                 <div>{props.parte.nome}</div>
-                <div className=" font-normal">Stress: {props.parte.stress}</div>
+                <div className=" font-normal text-gray-400 normal-case">Stress: {props.parte.stress}</div>
 
               </Link>
             </div>

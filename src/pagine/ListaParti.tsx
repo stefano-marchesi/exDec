@@ -16,9 +16,9 @@ export const ListaParti = () => {
       {categorie.map((categoria, index) => {
         return (
           <div key={index}>
-            <div className=" bg-gradient-to-t from-slate-800 to-gray-900 text-center text-orange-400 font-semibold text-lg">{categoria}</div>
+            <div className=" bg-gradient-to-t from-slate-800 to-gray-900 text-center text-orange-400 font-normal p-2 uppercase text-lg">{categoria}</div>
 
-            <div className="grid grid-cols-2">
+            <div className="">
 
               {parti[categoria].map((parte) => {
                 return (<DisplayParte key={parte.id} parte={parte} />)
