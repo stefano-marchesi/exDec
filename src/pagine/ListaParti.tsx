@@ -10,12 +10,12 @@ export const ListaParti = () => {
   console.log(parti)
   const categorie = Object.keys(parti)
   return (
-    <div className=" bg-gradient-to-t from-slate-500 to-slate-900 ">
+    <div className=" bg-slate-950 ">
       <AggiungiParte />
 
       {categorie.map((categoria, index)=>{
         return (<div key={index}>
-          <div className="text-white">{categoria}</div>
+          <div className=" bg-gradient-to-t from-slate-800 to-gray-900 text-center text-orange-400 font-semibold text-lg">{categoria}</div>
 
           <div className="grid grid-cols-2">
 

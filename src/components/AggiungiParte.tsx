@@ -5,22 +5,22 @@ import "./../index.css"
 
 const parteDefault = {
   nome: '',
-  stress:0,
+  stress: 0,
   categoria: 'Braccia'
 }
 
 export const AggiungiParte = () => {
   const dispatch = useDispatch()
   const [parte, cambiaParte] = useState(parteDefault)
-  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
-    cambiaParte({...parte, nome:e.target.value})
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    cambiaParte({ ...parte, nome: e.target.value })
   }
-  const handleChangeCategory = (e: React.ChangeEvent<HTMLInputElement>)=>{
-    cambiaParte({...parte, categoria:e.target.value})
+  const handleChangeCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
+    cambiaParte({ ...parte, categoria: e.target.value })
     console.log(e.target.value);
-    
+
     console.log(parte);
-    
+
   }
 
   const handleClick = () => {
@@ -43,17 +43,18 @@ export const AggiungiParte = () => {
         </div>
       </div>
       {aperto &&
-        <div className="border border-black rounded-lg bg-slate-50 m-3">
-          <div className=" text-orange-600 font-semibold text-center text-lg mt-3">Quale parte del corpo vuoi allenare? </div>
-          <div className=" flex justify-center mb-3 p-3">
-            <input className="border-2 border-black shadow-md  " value={parte.nome} onChange={handleNameChange} />
-            <div onChange={handleChangeCategory}>
-              <input type="radio" value="Braccia" name="gender" /> Braccia
-              <input type="radio" value="Torso" name="gender" /> Torso
-              <input type="radio" value="Gambe" name="gender" /> Gambe
+        <div className="border border-gray-500 rounded-lg bg-gray-800 m-3">
+          <div className=" text-orange-400 font-semibold text-center text-lg mt-3 flex justify-center">Quale parte del corpo vuoi allenare? </div>
+          <div className="mb-3 p-3 flex flex-col align-middle">
+            <input className="border-2 border-black bg-slate-400 flex justify-center" value={parte.nome} onChange={handleNameChange} />
+            <div className="flex-col grid mt-3 justify-items-center m-2 text-orange-400" onChange={handleChangeCategory}>
+              <div className=""><input type="radio" value="Braccia" name="gender" /> Braccia </div>
+              <div className=""><input type="radio" value="Torso" name="gender" /> Torso </div>
+              <div className=""><input type="radio" value="Gambe" name="gender" /> Gambe </div>
             </div>
-            <button className="ml-3 pl-1 pr-1 text-center border-2 border-black shadow-md " onClick={handleClick}>invia</button>
-
+            <div className="flex justify-center">
+            <button className="ml-3 mt-3 w-20 pl-1 pr-1 text-center inline-block align-text-top border-2 border-black bg-orange-700 text-white font-semibold rounded-full " onClick={handleClick}>INVIA</button>
+            </div>
           </div>
         </div>
 
