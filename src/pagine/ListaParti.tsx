@@ -14,18 +14,19 @@ export const ListaParti = () => {
       <AggiungiParte />
 
       {categorie.map((categoria, index)=>{
-        return (<div key={index}>
-          <div className="text-white">{categoria}</div>
+        return (
+          <div key={index}>
+            <div className="text-white">{categoria}</div>
 
-          <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2">
 
-            { parti[categoria].map((parte, index: number) => {
-              return ( <DisplayParte parte={parte} index={index} />)
-            })
-            }
-          </div>
+              { parti[categoria].map((parte ) => {
+                return ( <DisplayParte key={parte.id} parte={parte} />)
+              })
+              }
+            </div>
 
-        </div>)
+          </div>)
       })}
 
       <img src={logo} />

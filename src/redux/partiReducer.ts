@@ -5,7 +5,8 @@ import type { RootState } from './store'
 export type Parte = {
 	nome: string,
 	stress: number,
-	categoria: string
+	categoria: string,
+	id:number
 }
 
 export type PartiCategorizzate = {
@@ -19,18 +20,18 @@ interface PartiState {
 // Define the initial state using that type
 const initialState: PartiState = {
   value: [
-    {nome: 'Bicipite', stress: 20, categoria: 'Braccia'}, 
-    {nome: 'Tricipite', stress: 50, categoria: 'Braccia'},
+    {nome: 'Bicipite', stress: 20, categoria: 'Braccia', id:1}, 
+    {nome: 'Tricipite', stress: 50, categoria: 'Braccia', id:2},
     
-    {nome: 'Addominale Frontale', stress: 12, categoria: 'Torso'},
-    {nome: 'Addominale laterale', stress: 100, categoria: 'Torso'},
-    {nome: 'Pettorale', stress: 30, categoria: 'Torso'},
-    {nome: 'Trapezio Alto', stress: 10, categoria: 'Torso'},
-    {nome: 'Trapezio Basso', stress: 3, categoria: 'Torso'},
+    {nome: 'Addominale Frontale', stress: 12, categoria: 'Torso', id:3},
+    {nome: 'Addominale laterale', stress: 100, categoria: 'Torso', id:4},
+    {nome: 'Pettorale', stress: 30, categoria: 'Torso', id:5},
+    {nome: 'Trapezio Alto', stress: 10, categoria: 'Torso', id:6},
+    {nome: 'Trapezio Basso', stress: 3, categoria: 'Torso', id:7},
 
-    {nome: 'Gluteo', stress: 120, categoria: 'Gambe'},
-    {nome: 'Adduttori', stress: 3, categoria: 'Gambe'},
-    {nome: 'Quadicipite femorale', stress: 3, categoria: 'Gambe'},
+    {nome: 'Gluteo', stress: 120, categoria: 'Gambe', id:8},
+    {nome: 'Adduttori', stress: 3, categoria: 'Gambe', id:9},
+    {nome: 'Quadicipite femorale', stress: 3, categoria: 'Gambe', id:10},
   ],
 } as PartiState
 
@@ -41,7 +42,8 @@ export const partiSlice = createSlice({
   reducers: {
 
     aggiungiParte: (state : PartiState, action: PayloadAction<Parte>) => {
-      state.value.push(action.payload)
+
+      state.value.push({...action.payload, id:(new Date()).getTime()})
     },
   },
 })
