@@ -5,9 +5,9 @@ import "./../index.css"
 
 export const parteDefault = {
   nome: '',
-  stress:0,
+  stress: 0,
   categoria: 'Braccia',
-  id:0
+  id: 0
 }
 
 export const AggiungiParte = () => {
@@ -16,8 +16,8 @@ export const AggiungiParte = () => {
   const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     cambiaParte({ ...parte, nome: e.target.value })
   }
-  const handleChangeCategory = (e: React.ChangeEvent<HTMLInputElement>)=>{
-    cambiaParte({...parte, categoria:e.target.value})
+  const handleChangeCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
+    cambiaParte({ ...parte, categoria: e.target.value })
   }
 
   const handleClick = () => {
@@ -42,15 +42,15 @@ export const AggiungiParte = () => {
       {aperto &&
         <div className="border border-gray-500 bg-gray-900 m-3">
           <div className=" text-orange-400 font-semibold text-center text-lg mt-3 flex justify-center">Quale parte del corpo vuoi allenare? </div>
-          <div className="mb-3 p-3 flex flex-col align-middle">
-            <input className="border-2 w-2/3 border-black bg-slate-600 text-gray-300 flex justify-center" value={parte.nome} onChange={handleNameChange} />
+          <div className="mb-3 p-3 flex flex-col align-middle justify-center items-center">
+            <input className="border-2 w-2/3 border-black bg-slate-600 text-gray-300" value={parte.nome} onChange={handleNameChange} />
             <div className="flex-col grid mt-3 justify-items-center m-2 text-orange-400" onChange={handleChangeCategory}>
               <div className=""><input type="radio" value="Braccia" name="gender" /> Braccia </div>
               <div className=""><input type="radio" value="Torso" name="gender" /> Torso </div>
               <div className=""><input type="radio" value="Gambe" name="gender" /> Gambe </div>
             </div>
             <div className="flex justify-center">
-            <button className="ml-3 mt-3 w-20 pl-1 pr-1 text-center inline-block align-text-top border-2 border-black bg-orange-700 text-white font-semibold rounded-full " onClick={handleClick}>INVIA</button>
+              <button className="ml-3 mt-3 w-20 pl-1 pr-1 text-center inline-block align-text-top border-2 border-black bg-orange-700 text-white font-semibold rounded-full " onClick={handleClick}>INVIA</button>
             </div>
           </div>
         </div>
