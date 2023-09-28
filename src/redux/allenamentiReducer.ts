@@ -1,7 +1,7 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from './store'
-
+import { useSelector } from 'react-redux'
 
 export type Allenamento = {
   data: number,
@@ -27,15 +27,18 @@ export const allenamentiSlice = createSlice({
   reducers: {
 
     aggiungiAllenamento: (state : AllenamentiState, action: PayloadAction<Allenamento>) => {
-
       state.value.push(action.payload)
     },
   },
 })
 
+export const selectAllenamento = (state: RootState) => state.allenamenti.value
+export const allenamentiPerParte = (idParte:number)=>{
+  return useSelector(selectAllenamento).filter((elem: Allenamento) => {
+    return elem.idParte === idParte
+  })}
 export const { aggiungiAllenamento } = allenamentiSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectAllenamento = (state: RootState) => state.allenamenti.value
 
 export default allenamentiSlice.reducer

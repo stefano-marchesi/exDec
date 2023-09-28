@@ -1,5 +1,4 @@
-import { useSelector } from "react-redux"
-import { selectAllenamento } from "../redux/allenamentiReducer"
+import { allenamentiPerParte} from "../redux/allenamentiReducer"
 
 type ListaAllenamentiProps = {
   idParte: number
@@ -10,16 +9,14 @@ const formattaData = (data: Date) => {
 }
 
 export const ListaAllenamenti = (props: ListaAllenamentiProps) => {
-  const allenamenti = useSelector(selectAllenamento).filter((elem) => {
-    return elem.idParte === props.idParte
-  })
+  const allenamenti = allenamentiPerParte(props.idParte)
   return (
     <div className=" bg-gray-950 ml-2">
       <div className=" text-orange-500 font-semibold text-lg text-center"> Lista allenamenti </div>
       <div className=" text-gray-400 font-normal mt-2">
         {allenamenti.map((allenamento) => {
           return (
-            <div className=" pb-3">
+            <div key={allenamento.data} className=" pb-3">
               <div>
                 intensita: {allenamento.intensita}
               </div>

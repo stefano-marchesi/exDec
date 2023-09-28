@@ -1,11 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit'
 import partiReducer from './partiReducer'
 import allenamentiReducer from './allenamentiReducer'
+import storiaReducer from './storiaReducer'
+import thunk from 'redux-thunk'
 const store = configureStore({
   reducer: {
     parti: partiReducer,
-    allenamenti: allenamentiReducer
+    allenamenti: allenamentiReducer,
+    storia: storiaReducer
   },
+  middleware:[thunk]
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
