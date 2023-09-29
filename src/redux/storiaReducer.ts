@@ -2,6 +2,7 @@
 
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from './store'
+import { useSelector } from 'react-redux'
 
 
 export type ItemStoria = {
@@ -21,8 +22,8 @@ type PayloadCalcolo = {
 
 // Define the initial state using that type
 const initialState: StoriaState = {
-  value: [
-  ],
+  
+  
 } as StoriaState
 
 export const storiaSlice = createSlice({
@@ -40,5 +41,7 @@ export const { calcolaStoriaParte } = storiaSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectItemStoria = (state: RootState) => state.storia
-
+export const selectStoriaPerParte = (idParte:number)=>{
+  return useSelector(selectItemStoria)[idParte.toString()]||[]
+}
 export default storiaSlice.reducer

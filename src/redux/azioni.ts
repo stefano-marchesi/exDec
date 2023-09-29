@@ -1,5 +1,4 @@
-import { RootState } from "./store"
-import { ThunkAction, UnknownAction } from '@reduxjs/toolkit'
+import store from "./store"
 import { calcolaStoriaParte } from "./storiaReducer"
 
 import { Allenamento } from "./allenamentiReducer"
@@ -35,10 +34,15 @@ export const calcolaStoria = (allenamenti: Allenamento[]) : {ultimoValore: numbe
 	}).reverse()
 	return {nuovaStoria:storia, ultimoValore: storia[0].intensita}
 }
-export const aggiornaStoria =  (idParte:number): ThunkAction<void, RootState, unknown, UnknownAction> => (dispatch, getState)=>{	
-	console.log("SONO NEL THUNK")
-	const storia = calcolaStoria( getState().allenamenti.value)
-	dispatch(calcolaStoriaParte({idParte, nuovaStoria:storia.nuovaStoria}))
-	dispatch(cambiaValoreStress({idParte: idParte, nuovoValore: storia.ultimoValore}))
+
+
+export const aggiuntaAllenamento = (idParte : number) =>{
+	
+	const storia = calcolaStoria( store.getState().allenamenti.value.filter((elem:Allenamento)=>{
+		return elem.idParte===idParte
+	}))
+	store.dispatch(calcolaStoriaParte({idParte, nuovaStoria:storia.nuovaStoria}))
+	store.dispatch(cambiaValoreStress({idParte: idParte, nuovoValore: storia.ultimoValore}))
 	return 
 }
+

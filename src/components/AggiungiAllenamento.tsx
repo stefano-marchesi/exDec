@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { Allenamento, aggiungiAllenamento } from "../redux/allenamentiReducer"
-import {aggiornaStoria} from "./../redux/azioni"
+import { aggiuntaAllenamento} from "./../redux/azioni"
 
 const allenamentoDefault = (id: number) => {
   return {
@@ -38,7 +38,7 @@ export const AggiungiAllenamento = (props: AggiungiAllenamentoProps) => {
   const handleClick = () => {
     dispatch(aggiungiAllenamento(allenamento))
     cambiaAllenamento(allenamentoDefault(props.idParte))
-    dispatch(aggiornaStoria(props.idParte))
+    aggiuntaAllenamento(props.idParte)
     toggleAperto()
   }
 
@@ -50,7 +50,14 @@ export const AggiungiAllenamento = (props: AggiungiAllenamentoProps) => {
         <div className=" flex flex-col justify-self-stretch mb-10 bg-rose-400">
           <div>
             <div>Intensità</div>
-            <input className=" bg-slate-500 text-gray-300" type="number" defaultValue={allenamento.intensita} onChange={handleIntensitaChange} />
+            <div className="flex-col grid mt-3 justify-items-center m-2 text-orange-400" onChange={handleIntensitaChange}>
+              <div className=""><input type="radio" value="10" name="gender" /> Meh </div>
+              <div className=""><input type="radio" value="30" name="gender" /> Qualcosa </div>
+              <div className=""><input type="radio" value="60" name="gender" /> Qualcosa di piu </div>
+              <div className=""><input type="radio" value="80" name="gender" /> abbastanza </div>
+              <div className=""><input type="radio" value="100" name="gender" /> Perfetto </div>
+              <div className=""><input type="radio" value="120" name="gender" /> troppo </div>
+            </div>
           </div>
 
           <div>
