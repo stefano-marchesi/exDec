@@ -40,7 +40,13 @@ export const partiSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-
+    cambiaValoreStress:(state : PartiState, action: PayloadAction<{idParte:number, nuovoValore:number}>) => {
+      const index = state.value.findIndex((elem)=>{
+	return elem.id === action.payload.idParte
+      })
+      state.value[index].stress= action.payload.nuovoValore
+    },
+ 
     aggiungiParte: (state : PartiState, action: PayloadAction<Parte>) => {
 
       state.value.push({...action.payload, id:(new Date()).getTime()})
@@ -48,7 +54,7 @@ export const partiSlice = createSlice({
   },
 })
 
-export const { aggiungiParte } = partiSlice.actions
+export const { aggiungiParte, cambiaValoreStress } = partiSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectParti = (state: RootState) => state.parti.value

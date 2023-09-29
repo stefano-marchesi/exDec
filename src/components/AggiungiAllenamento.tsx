@@ -2,7 +2,6 @@ import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { Allenamento, aggiungiAllenamento } from "../redux/allenamentiReducer"
 import {aggiornaStoria} from "./../redux/azioni"
-import { calcolaStoriaParte } from "../redux/storiaReducer"
 
 const allenamentoDefault = (id: number) => {
   return {
@@ -39,7 +38,6 @@ export const AggiungiAllenamento = (props: AggiungiAllenamentoProps) => {
   const handleClick = () => {
     dispatch(aggiungiAllenamento(allenamento))
     cambiaAllenamento(allenamentoDefault(props.idParte))
-  //  dispatch(calcolaStoriaParte(props.idParte))
     dispatch(aggiornaStoria(props.idParte))
     toggleAperto()
   }
