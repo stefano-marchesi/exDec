@@ -6,7 +6,7 @@ export const Main = () => {
 
     <div>
       <div className=""> < img src={sfondo}></img>
-        <div className="flex justify-evenly p-2 ">
+        <div className="flex justify-evenly bg-slate-950 p-2 ">
           <div className=" bg-gray-700 rounded-full shadow-md text-orange-500 font-bold w-10 h-10  text-xs items-center inline-flex justify-center ">Back</div>
           <div className=" bg-gray-700 rounded-full shadow-md text-orange-500 font-bold w-10 h-10  text-xs items-center inline-flex justify-center ">Home</div>
           <div className=" bg-gray-700 rounded-full shadow-md text-orange-500 font-bold w-10 h-10  text-lg items-center inline-flex justify-center font-serif ">i</div>
