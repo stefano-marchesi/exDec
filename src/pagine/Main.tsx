@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom"
 import './../index.css'
 import sfondo from '../assets/abstr01.png'
 export const Main = () => {
+
   return (
 
     <div>

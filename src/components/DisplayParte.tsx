@@ -14,7 +14,6 @@ export const DisplayParte = (props: DisplayParteProps)=>{
               <Link to={`singolaparte/${props.parte.id}`}>
                 <div>{props.parte.nome}</div>
                 <div className=" font-normal text-gray-400 normal-case">Stress: {props.parte.stress}</div>
-
               </Link>
             </div>
           )
