@@ -14,7 +14,7 @@ export const VisualizzaStoria = (props:VisualozzaStoraProps)=>{
     <>
       <div className=" text-orange-400 text-lg font-semibold uppercase ml-3 mt-5">STORIA</div>
       <LineChart width={300} height={300} data={storia}>
-        <Line type="monotone" dataKey="intensita" stroke="#8884d8" />
+        <Line type="monotone" dataKey="intensita" stroke="#f97316" />
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="data" />
         <YAxis />
