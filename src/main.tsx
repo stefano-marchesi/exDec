@@ -10,7 +10,7 @@ import { ListaParti } from './pagine/ListaParti.tsx';
 import { SingolaParte } from './pagine/SingolaParte.tsx';
 import { Provider } from 'react-redux';
 import store from './redux/store.ts'
-
+import './firebaseConfig.ts'
 const router = createBrowserRouter([
   {
     path: "/",
