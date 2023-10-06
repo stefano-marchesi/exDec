@@ -1,4 +1,4 @@
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { selectStoriaPerParte } from '../redux/storiaReducer';
 
 
@@ -13,12 +13,14 @@ export const VisualizzaStoria = (props:VisualozzaStoraProps)=>{
   return (
     <>
       <div className=" text-orange-400 text-lg font-semibold uppercase ml-3 mt-5">STORIA</div>
-      <LineChart width={300} height={300} data={storia}>
+      <ResponsiveContainer height={400}>
+      <LineChart data={storia}>
         <Line type="monotone" dataKey="intensita" stroke="#f97316" />
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="data" />
         <YAxis />
       </LineChart>
+      </ResponsiveContainer>
     </>
   )
 
