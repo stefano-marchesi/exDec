@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import partiReducer from './partiReducer'
 import allenamentiReducer from './allenamentiReducer'
 import storiaReducer from './storiaReducer'
+import utenteReducer from './untenteReducer'
 import thunk from 'redux-thunk'
 const store = configureStore({
   reducer: {
     parti: partiReducer,
     allenamenti: allenamentiReducer,
-    storia: storiaReducer
+    storia: storiaReducer,
+    utente:utenteReducer
   },
   middleware:[thunk]
 })

@@ -21,7 +21,7 @@ const initialState: AllenamentiState = {
 } as AllenamentiState
 
 export const allenamentiSlice = createSlice({
-  name: 'parti',
+  name: 'allenamenti',
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {

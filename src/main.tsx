@@ -11,6 +11,9 @@ import { SingolaParte } from './pagine/SingolaParte.tsx';
 import { Provider } from 'react-redux';
 import store from './redux/store.ts'
 import './firebaseConfig.ts'
+import { PaginaProfilo } from './pagine/PaginaProfilo.tsx';
+import './connection/connection.ts';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <ListaParti />,
+      },
+      {
+        path: "/profilo",
+        element: <PaginaProfilo />,
       },
       {
         path: "/singolaparte/:indexParte",
