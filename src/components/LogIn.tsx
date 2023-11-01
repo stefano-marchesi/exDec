@@ -1,5 +1,6 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import { useState } from "react"
+import { cssBottone } from "../costantiTailwind"
 
 export const LogIn = () => {
   const auth = getAuth()
@@ -27,7 +28,7 @@ export const LogIn = () => {
         <input className="border-2 w-2/3 border-black bg-slate-600 text-gray-300 rounded" value={credential.mail} onChange={handleChangeMail} />
         <input className="border-2 w-2/3 border-black bg-slate-600 text-gray-300 mt-1 rounded" value={credential.pass} onChange={handleChangePassword} />
 
-        <button className="ml-3 mt-5 w-20 pl-1 pr-1 text-center inline-block align-text-top border-2 border-black bg-orange-500 text-grsy-900 font-semibold rounded-full " onClick={handleClick}>AVANTI</button>
+        <button className={cssBottone} onClick={handleClick}>AVANTI</button>
       </div>
     </div>
 
