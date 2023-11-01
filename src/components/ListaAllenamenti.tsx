@@ -11,18 +11,19 @@ const formattaData = (data: Date) => {
 export const ListaAllenamenti = (props: ListaAllenamentiProps) => {
   const allenamenti = allenamentiPerParte(props.idParte)
   return (
-    <div className=" ml-3">
-      <div className=" text-orange-500 font-semibold text-lg text-center"> Lista allenamenti </div>
+    <div className=" ml-6 mt-5">
+      <div className=" text-orange-400 font-semibold text-lg"> Lista allenamenti </div>
       <div className=" text-gray-400 font-normal mt-3">
         {allenamenti.map((allenamento) => {
           return (
             <div key={allenamento.data} className=" pb-3">
               <div>
-                Intensità: {allenamento.intensita}
+                DATA: {formattaData(new Date(allenamento.data))}
               </div>
               <div>
-                data: {formattaData(new Date(allenamento.data))}
+                Intensità: {allenamento.intensita}
               </div>
+              
             </div>
           )
         })}

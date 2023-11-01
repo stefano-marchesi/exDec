@@ -46,15 +46,15 @@ export const AggiungiAllenamento = (props: AggiungiAllenamentoProps) => {
   return (
     <>
 
-      <button className="font-semibold text-xl w-10 h-10 text-right items-center align-text-top inline-flex justify-center rounded-full bg-gray-800 " onClick={toggleAperto}>+</button>
+      <button className="font-semibold text-3xl text-top" onClick={toggleAperto}>+</button>
       {aperto &&
-        <div id="defaultModal" aria-hidden="true" className="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-          <div className="relative w-full max-w-2xl max-h-full">
+        <div id="defaultModal" aria-hidden="true" className="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+          <div className="absolute inset-0 flex justify-center items-center max-h-full ">
 
-            <div className="relative rounded-lg shadow bg-gray-800">
+            <div className="relative rounded-lg shadow bg-zinc-900 border-2 border-black pl-5 pr-5 w-full m-3 max-w-md">
 
-              <div className="flex items-start justify-between p-4 ">
-                <h3 className="text-xl font-semibold text-gray-900">
+              <div className="flex items-start justify-between pt-10 ">
+                <h3 className="text-xl font-semibold text-orange-400 uppercase">
                   Intensità
                 </h3>
                 <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" onClick={toggleAperto} data-modal-hide="defaultModal">
@@ -65,27 +65,27 @@ export const AggiungiAllenamento = (props: AggiungiAllenamentoProps) => {
                 </button>
               </div>
 
-              <div className="p-3 space-y-3">
-                <div className=" flex flex-col justify-self-stretch mb-10 bg-gray-800">
+              <div className=" pb-3 space-y-3">
+                <div className=" flex flex-col justify-self-stretch mb-5 text-base">
                   <div>
-                    <div className="flex-col grid mt-3 justify-center text-left m-2 text-orange-400" onChange={handleIntensitaChange}>
+                    <div className="flex-col grid justify-center text-left m-2 text-orange-400" onChange={handleIntensitaChange}>
                       <div className="mt-3"><input type="radio" value="10" name="gender" /> Meh </div>
                       <div className="mt-3"><input type="radio" value="30" name="gender" /> Qualcosa </div>
-                      <div className="mt-3"><input type="radio" value="60" name="gender" /> Qualcosa di piu </div>
+                      <div className="mt-3"><input type="radio" value="60" name="gender" /> Qualcosa di più </div>
                       <div className="mt-3"><input type="radio" value="80" name="gender" /> Abbastanza </div>
                       <div className="mt-3"><input type="radio" value="100" name="gender" /> Perfetto </div>
                       <div className="mt-3"><input type="radio" value="120" name="gender" /> Troppo </div>
                     </div>
                   </div>
 
-                  <div className=" mt-3 flex flex-col place-items-center">
+                  <div className=" mt-5 flex flex-col place-items-center">
                     <div className="flex flex-row">
-                      <div className=" mr-4 font-bold text-lg">Data:</div>
+                      <div className=" mr-4 text-lg text-gray-400 ">Data:</div>
                       <input className=" bg-slate-600 text-gray-200 pl-1"  type="date" defaultValue={new Date(allenamento.data).toISOString().substring(0, 10)} onChange={handleDataChange} />
                     </div>
                   </div>
                   <div className=" flex flex-col place-items-center mt-5" >
-                    <button className="ml-3 mt-3 w-20 p-1 text-center inline-block align-text-top border-2 border-black bg-orange-700 text-gray-200 font-semibold rounded-full " onClick={handleClick}>INVIA</button>
+                    <button className="btn-primary" onClick={handleClick}>INVIA</button>
                   </div>
                 </div>
               </div>

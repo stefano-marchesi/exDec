@@ -17,21 +17,22 @@ export const SingolaParte = () => {
     .find((elem) => { return elem.id === Number(indexParte || 0) }) || parteDefault
 
   return (
-    <div className="bg-gray-950 pt-5">
-      <div className=" ml-3">
-        <p className=" text-gray-400">Parte</p>
-        <p className=" text-orange-400 text-lg font-semibold uppercase"> {parte.nome}</p>
-        <p className=" text-orange-600">Stress: {parte.stress}</p>
+    <div className="">
+      <div className=" pl-3 bg-zinc-900/80 pt-5 mb-3 ">
+        <p className=" text-orange-500 text-3xl font-semibold uppercase text-center drop-shadow-md"> {parte.nome}</p>
+        <p className=" text-gray-400 text-lg text-center">Stress: {parte.stress}</p>
 
-      </div>
+      
 
       <VisualizzaStoria idParte={Number(indexParte)} />
-      <div className=" text-gray-400 ml-3 mr-3 grid grid-cols-2">
-        <div className="pb-4"> <p> Aggiungi allenamento </p> </div>
+      </div>
+      
+      <div className=" text-orange-500 pl-3 pr-3 bg-zinc-900/80 pt-5 mb-3 font-bold text-lg grid grid-cols-2">
+        <div className="pb-4">AGGIUNGI ALLENAMENTO</div>
         <div className=" text-right pr-2"><AggiungiAllenamento idParte={Number(indexParte)||0} /> </div>
 
       </div>
-      <div className="flex flex-col">
+      <div className="flex flex-col bg-zinc-900/80">
         <ListaAllenamenti idParte={Number(indexParte)} />
       </div>
     </div>

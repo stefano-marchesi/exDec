@@ -22,7 +22,7 @@ export const Main = () => {
     return (
       <div className="bg-[url('assets/bg-main.png')] bg-fixed h-screen flex flex-col">
 
-        <div className="grow-0 flex justify-between pl-3 pr-3 pt-3 mb-3 ">
+        <div className="grow-0 flex justify-between p-3 ">
           <Link to={'../'}>
             <div><img src={home}></img></div>
           </Link>

@@ -12,7 +12,8 @@ export const VisualizzaStoria = (props:VisualozzaStoraProps)=>{
 
   return (
     <>
-      <div className=" text-orange-400 text-lg font-semibold uppercase ml-3 mt-5">STORIA</div>
+      <div className=" text-orange-400 text-lg font-semibold uppercase mt-5">STORIA</div>
+      <div className=' mr-5'>
       <ResponsiveContainer height={400}>
       <LineChart data={storia}>
         <Line type="monotone" dataKey="intensita" stroke="#f97316" />
@@ -21,6 +22,7 @@ export const VisualizzaStoria = (props:VisualozzaStoraProps)=>{
         <YAxis />
       </LineChart>
       </ResponsiveContainer>
+      </div>
     </>
   )
 
