@@ -26,10 +26,10 @@ export const SingolaParte = () => {
 
       <VisualizzaStoria idParte={Number(indexParte)} />
       </div>
-      
-      <div className=" text-orange-500 pl-3 pr-3 bg-zinc-900/80 pt-5 mb-3 font-bold text-lg grid grid-cols-2">
-        <div className="pb-4">AGGIUNGI ALLENAMENTO</div>
-        <div className=" text-right pr-2"><AggiungiAllenamento idParte={Number(indexParte)||0} /> </div>
+      <div className="grid grid-cols-2 bg-zinc-900/80 mb-3">
+        <div className=" pl-3 py-3 text-orange-500 font-bold">AGGIUNGI ALLENAMENTO</div>
+        <div className=" font-bold text-orange-500 text-right text-3xl pr-3 align-middle ">
+          <AggiungiAllenamento idParte={Number(indexParte)||0} /> </div>
 
       </div>
       <div className="flex flex-col bg-zinc-900/80">
