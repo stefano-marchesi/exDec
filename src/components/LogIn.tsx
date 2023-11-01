@@ -1,6 +1,5 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
 import { useState } from "react"
-import { cssBottone } from "../costantiTailwind"
 
 export const LogIn = () => {
   const auth = getAuth()
