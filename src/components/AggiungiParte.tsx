@@ -33,9 +33,9 @@ export const AggiungiParte = () => {
     <>
 
 
-      <div className="grid grid-cols-2 bg-gradient-to-t from-orange-400 to-orange-700 ">
-        <div className=" pl-3 py-3 text-gray-900 font-bold">IL MIO ALLENAMENTO</div>
-        <div className=" font-bold text-gray-900 text-right text-3xl pr-3 align-middle ">
+      <div className="grid grid-cols-2 ">
+        <div className=" pl-3 py-3 text-orange-400 font-bold">IL MIO ALLENAMENTO</div>
+        <div className=" font-bold text-orange-400 text-right text-3xl pr-3 align-middle ">
           <button onClick={toggleAperto}>+</button>
         </div>
       </div>

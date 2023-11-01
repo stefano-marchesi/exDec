@@ -10,13 +10,13 @@ export const ListaParti = () => {
   console.log(parti)
   const categorie = Object.keys(parti)
   return (
-    <div className=" bg-slate-950 ">
+    <div className=" ">
       <AggiungiParte />
 
       {categorie.map((categoria, index) => {
         return (
           <div key={index}>
-            <div className=" bg-gradient-to-t from-slate-800 to-gray-900 text-center text-orange-400 font-normal p-2 uppercase text-lg">{categoria}</div>
+            <div className=" text-orange-400 p-3 uppercase text-lg font-bold">{categoria}</div>
 
             <div className="">
 
