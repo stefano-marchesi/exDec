@@ -2,12 +2,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from './store'
 import { useSelector } from 'react-redux'
+import { Allenamento } from '../types'
 
-export type Allenamento = {
-  data: number,
-  intensita: number,
-  idParte: number
-}
 
 // Define a type for the slice state
 interface AllenamentiState {

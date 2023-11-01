@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { aggiungiParte } from "../redux/partiReducer"
-import { ciao } from "../components/greet"
 import "./../index.css"
+import { Parte } from "../types"
 
 export const parteDefault = {
   nome: '',
   stress: 0,
   categoria: 'Braccia',
   id: 0
-}
+}as Parte
 
 export const AggiungiParte = () => {
   const dispatch = useDispatch()

@@ -1,13 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from './store'
+import { Parte } from '../types'
 
 
-export type Parte = {
-	nome: string,
-	stress: number,
-	categoria: string,
-	id:number
-}
 
 export type PartiCategorizzate = {
   [key: string]:Parte[]

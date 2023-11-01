@@ -1,8 +1,13 @@
 import {  useState } from "react"
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useDispatch } from "react-redux";
 import { doc, setDoc } from "firebase/firestore"; 
 import { db } from "../firebaseConfig";
+import { user } from "../types";
+
+
+const defaultUser: user = {
+  nome:''
+}
 
 export const SignIn = ()=>{
   const auth = getAuth();
@@ -19,9 +24,7 @@ export const SignIn = ()=>{
     createUserWithEmailAndPassword(auth, credential.mail, credential.pass).then((userCredential)=>{
       console.log(userCredential)
       let uid = userCredential.user.uid
-      setDoc(doc(db, 'utenti', uid),{
-        test:'test'
-      }) 
+      setDoc(doc(db, 'utenti', uid),defaultUser) 
 
 
     }).catch((err)=>{

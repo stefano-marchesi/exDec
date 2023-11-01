@@ -1,7 +1,8 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { Allenamento, aggiungiAllenamento } from "../redux/allenamentiReducer"
+import {  aggiungiAllenamento } from "../redux/allenamentiReducer"
 import { aggiuntaAllenamento } from "./../redux/azioni"
+import { Allenamento } from "../types"
 
 const allenamentoDefault = (id: number) => {
   return {
