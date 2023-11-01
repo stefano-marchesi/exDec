@@ -53,7 +53,7 @@ export const AggiungiAllenamento = (props: AggiungiAllenamentoProps) => {
             <div className="relative rounded-lg shadow bg-gray-800">
 
               <div className="flex items-start justify-between p-4 ">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <h3 className="text-xl font-semibold text-gray-900">
                   Intensità
                 </h3>
                 <button type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" onClick={toggleAperto} data-modal-hide="defaultModal">
