@@ -8,7 +8,7 @@ export type PartiCategorizzate = {
   [key: string]:Parte[]
 }
 // Define a type for the slice state
-interface PartiState {
+export interface PartiState {
   value: Parte[]
 }
 
@@ -43,13 +43,15 @@ export const partiSlice = createSlice({
     },
  
     aggiungiParte: (state : PartiState, action: PayloadAction<Parte>) => {
-
       state.value.push({...action.payload, id:(new Date()).getTime()})
     },
+    settaParti:(state:PartiState, action : PayloadAction<PartiState>)=>{
+      state.value = action.payload.value
+    }
   },
 })
 
-export const { aggiungiParte, cambiaValoreStress } = partiSlice.actions
+export const { aggiungiParte, cambiaValoreStress, settaParti } = partiSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectParti = (state: RootState) => state.parti.value

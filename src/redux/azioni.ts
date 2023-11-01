@@ -1,12 +1,15 @@
 import store from "./store"
 import { calcolaStoriaParte } from "./storiaReducer"
 
-import { Allenamento } from "./allenamentiReducer"
+import { Allenamento } from "./../types"
 import { ItemStoria } from "./storiaReducer"
 import { cambiaValoreStress } from "./partiReducer"
 
 export const calcolaStoria = (allenamenti: Allenamento[]) : {ultimoValore: number, nuovaStoria: ItemStoria[]}=>{
-
+	if(allenamenti.length===0){
+		
+	return {nuovaStoria:[], ultimoValore: 0}
+	}
 	const today = new Date().getTime()
 	let allenamentiOrdinati = allenamenti.slice().sort((allenamento1, allenamento2)=>{
 		return allenamento1.data - allenamento2.data
@@ -37,7 +40,7 @@ export const calcolaStoria = (allenamenti: Allenamento[]) : {ultimoValore: numbe
 
 
 export const aggiuntaAllenamento = (idParte : number) =>{
-	
+
 	const storia = calcolaStoria( store.getState().allenamenti.value.filter((elem:Allenamento)=>{
 		return elem.idParte===idParte
 	}))

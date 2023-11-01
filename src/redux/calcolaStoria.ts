@@ -1,4 +1,4 @@
-import { Allenamento } from "./allenamentiReducer"
+import { Allenamento } from "./../types"
 import { ItemStoria } from "./storiaReducer"
 
 export const calcolaStoria = (allenamenti: Allenamento[]) : ItemStoria[]=>{
@@ -28,7 +28,5 @@ export const calcolaStoria = (allenamenti: Allenamento[]) : ItemStoria[]=>{
     intensitaIeri = (intensitaOggi+intensitaIeri)/2 
     return newElem
   })
-  console.log(storia)
-  console.log(storia)
     return storia
 }

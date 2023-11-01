@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 import {  aggiungiAllenamento } from "../redux/allenamentiReducer"
 import { aggiuntaAllenamento } from "./../redux/azioni"
 import { Allenamento } from "../types"
+import { syncAllenamenti } from "../connection/allenamentiWatcher"
 
 const allenamentoDefault = (id: number) => {
   return {
@@ -40,6 +41,7 @@ export const AggiungiAllenamento = (props: AggiungiAllenamentoProps) => {
     dispatch(aggiungiAllenamento(allenamento))
     cambiaAllenamento(allenamentoDefault(props.idParte))
     aggiuntaAllenamento(props.idParte)
+    syncAllenamenti()
     toggleAperto()
   }
 

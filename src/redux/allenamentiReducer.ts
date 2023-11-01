@@ -6,7 +6,7 @@ import { Allenamento } from '../types'
 
 
 // Define a type for the slice state
-interface AllenamentiState {
+export interface AllenamentiState {
   value: Allenamento[]
 }
 
@@ -25,6 +25,10 @@ export const allenamentiSlice = createSlice({
     aggiungiAllenamento: (state : AllenamentiState, action: PayloadAction<Allenamento>) => {
       state.value.push(action.payload)
     },
+    settaAllenamenti: (state : AllenamentiState, action: PayloadAction<AllenamentiState>) => {
+      console.log("CHOAMATOP SETTA ALLENAMENTI", action.payload)
+      state.value=action.payload.value
+    },
   },
 })
 
@@ -33,7 +37,7 @@ export const allenamentiPerParte = (idParte:number)=>{
   return useSelector(selectAllenamento).filter((elem: Allenamento) => {
     return elem.idParte === idParte
   })}
-export const { aggiungiAllenamento } = allenamentiSlice.actions
+export const { aggiungiAllenamento, settaAllenamenti } = allenamentiSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 

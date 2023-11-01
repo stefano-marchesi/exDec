@@ -5,6 +5,7 @@ import { aggiungiParte } from "../redux/partiReducer"
 import "./../index.css"
 import { Greet } from "./greet"
 import { Parte } from "../types"
+import { syncParti } from "../connection/PartiConnessione"
 
 export const parteDefault = {
   nome: '',
@@ -27,6 +28,7 @@ export const AggiungiParte = () => {
     dispatch(aggiungiParte(parte))
     cambiaParte(parteDefault)
     toggleAperto()
+    syncParti()
   }
 
 
