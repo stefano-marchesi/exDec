@@ -25,9 +25,9 @@ export const LogIn = () => {
     <div className="pt-3 ">
       <div className="flex flex-col items-center">
         <input className="border-2 border-black bg-slate-600 text-gray-300 rounded" value={credential.mail} onChange={handleChangeMail} />
-        <input className="border-2 border-black bg-slate-600 text-gray-300 mt-1 rounded" value={credential.pass} onChange={handleChangePassword} />
+        <input className="border-2 border-black bg-slate-600 text-gray-300 mt-3 rounded" value={credential.pass} onChange={handleChangePassword} />
 
-        <button className="btn-primary" onClick={handleClick}>AVANTI</button>
+        <button className="btn-primary mt-3" onClick={handleClick}>AVANTI</button>
       </div>
     </div>
 

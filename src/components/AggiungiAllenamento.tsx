@@ -50,7 +50,7 @@ export const AggiungiAllenamento = (props: AggiungiAllenamentoProps) => {
 
       <button className="font-semibold text-3xl text-top" onClick={toggleAperto}>+</button>
       {aperto &&
-        <div id="defaultModal" aria-hidden="true" className="fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full ">
+        <div id="defaultModal" aria-hidden="true" className="fixed top-0 left-0 right-0 bottom-0 backdrop-blur-md z-50 w-full overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] ">
           <div className="absolute inset-0 flex justify-center items-center max-h-full ">
 
             <div className="relative rounded-lg shadow bg-zinc-900 border-2 border-black pl-5 pr-5 w-full m-3 max-w-md">
