@@ -28,7 +28,7 @@ export const LogIn = () => {
         <input className="border-2 w-2/3 border-black bg-slate-600 text-gray-300 rounded" value={credential.mail} onChange={handleChangeMail} />
         <input className="border-2 w-2/3 border-black bg-slate-600 text-gray-300 mt-1 rounded" value={credential.pass} onChange={handleChangePassword} />
 
-        <button className={cssBottone} onClick={handleClick}>AVANTI</button>
+        <button className="btn-primary" onClick={handleClick}>AVANTI</button>
       </div>
     </div>
 
