@@ -6,7 +6,7 @@ type GreetProps = {
 export const Greet = (props : GreetProps)=>{
   return (
     <div>
-      ciao {props.name}
+      Ciao {props.name}
     </div>
   )
 }

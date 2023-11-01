@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { aggiungiParte } from "../redux/partiReducer"
+import { ciao } from "../components/greet"
 import "./../index.css"
 
 export const parteDefault = {
@@ -31,7 +32,9 @@ export const AggiungiParte = () => {
   const toggleAperto = () => { cambiaAperto(!aperto) }
   return (
     <>
+<div>
 
+</div>
 
       <div className="grid grid-cols-2 ">
         <div className=" pl-3 py-3 text-orange-400 font-bold">IL MIO ALLENAMENTO</div>
