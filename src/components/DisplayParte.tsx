@@ -10,7 +10,7 @@ type DisplayParteProps = {
 export const DisplayParte = (props: DisplayParteProps) => {
 
   return (
-    <div className=" flex flex-row justify-between">
+    <div className=" flex flex-row justify-between bg-zinc-900/80">
       <div className="ml-6 mr-3 m-2 mb-3 font-semibold text-gray-400 uppercase text-left" >
         <Link to={`singolaparte/${props.parte.id}`}>
           <div>{props.parte.nome}</div>

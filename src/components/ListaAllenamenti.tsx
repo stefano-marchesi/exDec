@@ -11,7 +11,7 @@ const formattaData = (data: Date) => {
 export const ListaAllenamenti = (props: ListaAllenamentiProps) => {
   const allenamenti = allenamentiPerParte(props.idParte)
   return (
-    <div className=" bg-gray-transparent ml-3">
+    <div className=" ml-3">
       <div className=" text-orange-500 font-semibold text-lg text-center"> Lista allenamenti </div>
       <div className=" text-gray-400 font-normal mt-3">
         {allenamenti.map((allenamento) => {

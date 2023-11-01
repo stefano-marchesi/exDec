@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { aggiungiParte } from "../redux/partiReducer"
-import { ciao } from "../components/greet"
+
 import "./../index.css"
+import { Greet } from "./greet"
 
 export const parteDefault = {
   nome: '',
@@ -32,13 +33,13 @@ export const AggiungiParte = () => {
   const toggleAperto = () => { cambiaAperto(!aperto) }
   return (
     <>
-<div>
-
+<div className=" text-gray-300 ml-3 mb-5 font-bold drop-shadow-md">
+<Greet name="Stefano" />
 </div>
 
-      <div className="grid grid-cols-2 ">
-        <div className=" pl-3 py-3 text-orange-400 font-bold">IL MIO ALLENAMENTO</div>
-        <div className=" font-bold text-orange-400 text-right text-3xl pr-3 align-middle ">
+      <div className="grid grid-cols-2 bg-zinc-900/80">
+        <div className=" pl-3 py-3 text-orange-500 font-bold">IL MIO ALLENAMENTO</div>
+        <div className=" font-bold text-orange-500 text-right text-3xl pr-3 align-middle ">
           <button onClick={toggleAperto}>+</button>
         </div>
       </div>

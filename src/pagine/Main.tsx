@@ -20,9 +20,9 @@ export const Main = () => {
 
   if (loggato) {
     return (
-      <div className="bg-[url('assets/bg-main.png')]">
+      <div className="bg-[url('assets/bg-main.png')] bg-fixed">
 
-        <div className="flex justify-between  p-5 ">
+        <div className="fixed top-0 left-0 right-0 flex justify-between pl-3 pr-3 pt-3 mb-3 ">
           <Link to={'../'}>
             <div><img src={home}></img></div>
           </Link>
@@ -34,7 +34,7 @@ export const Main = () => {
         </div>
 
         <Outlet />
-        <div className="bg-gray-950 h-screen italic text-orange-600 text-center font-light p-2">Ricordati di bere tanta acqua!</div>
+        
       </div>
     )
   } else {
