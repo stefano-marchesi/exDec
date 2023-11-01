@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom"
-import { Parte } from "../redux/partiReducer"
+import { Parte } from "./../types"
 import speed from '../assets/speedo.png'
 
 type DisplayParteProps = {

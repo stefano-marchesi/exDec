@@ -1,25 +1,26 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from './store'
 
-
 // Define a type for the slice state
 interface UtenteState {
   logged: Boolean,
-  data: {
-    id:string,
-    nome:string
-  }
+  id:string
+  data:user
 }
 
+type logInChanged= {
+  loggato:boolean,
+  id:string
+}
 
 // Define the initial state using that type
 const initialState: UtenteState = {
   logged:false,
+  id:'',
   data: {
-    id:'',
     nome:''
   }
-  
+
 } as UtenteState
 
 export const utenteSlice = createSlice({
@@ -27,13 +28,10 @@ export const utenteSlice = createSlice({
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
-
-    cambiaValoreLoggato: (state : UtenteState, action: PayloadAction<boolean>) => {
+    cambiaValoreLoggato: (state : UtenteState, action: PayloadAction<logInChanged>) => {
       console.log(action);
-      
-      state.logged = action.payload 
-      console.log(state);
-      
+      state.logged = action.payload.loggato
+      state.id = action.payload.id
     },
   },
 })

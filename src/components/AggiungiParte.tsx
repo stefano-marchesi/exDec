@@ -4,13 +4,14 @@ import { aggiungiParte } from "../redux/partiReducer"
 
 import "./../index.css"
 import { Greet } from "./greet"
+import { Parte } from "../types"
 
 export const parteDefault = {
   nome: '',
   stress: 0,
   categoria: 'Braccia',
   id: 0
-}
+}as Parte
 
 export const AggiungiParte = () => {
   const dispatch = useDispatch()
