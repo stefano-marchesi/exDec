@@ -20,9 +20,9 @@ export const Main = () => {
 
   if (loggato) {
     return (
-      <div className="bg-[url('assets/bg-main.png')] bg-fixed">
+      <div className="bg-[url('assets/bg-main.png')] bg-fixed h-screen flex flex-col">
 
-        <div className="fixed top-0 left-0 right-0 flex justify-between pl-3 pr-3 pt-3 mb-3 ">
+        <div className="grow-0 flex justify-between pl-3 pr-3 pt-3 mb-3 ">
           <Link to={'../'}>
             <div><img src={home}></img></div>
           </Link>
@@ -32,8 +32,9 @@ export const Main = () => {
           </Link>
           <div onClick={logOut}><img src={logout}></img></div>
         </div>
-
+        <div className="grow overflow-scroll">
         <Outlet />
+        </div>
         
       </div>
     )
